@@ -20,6 +20,11 @@ const HTTP_PORT = process.env.PORT || 8080;
 
 const app = express();
 
+
+// Set the path for the views directory
+app.set('views', path.join(__dirname, 'views', 'Layouts'));
+
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/public", express.static(__dirname + '/public'));
 app.use(function(req,res,next){
