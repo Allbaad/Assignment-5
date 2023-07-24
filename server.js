@@ -13,17 +13,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const exphbs = require('express-handlebars');
 
-
-
 const HTTP_PORT = process.env.PORT || 8080;
-
 
 const app = express();
 
-
 // Set the path for the views directory
-app.set('views', path.join(__dirname, 'views', 'Layouts'));
-
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/public", express.static(__dirname + '/public'));
